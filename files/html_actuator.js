@@ -52,7 +52,7 @@ HTMLActuator.prototype.clearContainer = function (container) {
 };
 
 HTMLActuator.prototype.addTile = function (tile) {
-  var text = "     ÌÆËÎÔªÃ÷Çå¡¡¡¡";
+  var text = "     ä¸ƒç³æœˆæ›¦å°é»‘ç™½";
   var self = this;
   var text2 = function (n) { var r = 0; while (n > 1) r++, n >>= 1; return r; }
 
