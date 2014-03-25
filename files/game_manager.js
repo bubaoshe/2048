@@ -149,10 +149,13 @@ GameManager.prototype.move = function (direction) {
             maxscore = merged.value;
             maxlevel = 0;
            }
-	  
-          // The mighty 2048 tile
+           
+	  var mergeaudio = new Audio('files/spring.mp3');
+    	  mergeaudio.play();
           if (maxlevel > 0 && merged.value > maxlevel)
           	maxlevel = merged.value;
+	  
+          // The mighty 2048 tile          
           if (merged.value === 2048) self.won = true;          
         } else {
           self.moveTile(tile, positions.farthest);
@@ -166,9 +169,7 @@ GameManager.prototype.move = function (direction) {
   });
   if (maxlevel > 2)
   {
-  	document.getElementById("maxlevel").innerHTML = maxlevel;
-  	var mergeaudio = new Audio('files/spring.mp3');
-	mergeaudio.play();
+  	document.getElementById("maxlevel").innerHTML = maxlevel;  	
   }
   else if (maxlevel === 0)
   {
