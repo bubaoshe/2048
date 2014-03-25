@@ -114,13 +114,15 @@ GameManager.prototype.move = function (direction) {
   var vector     = this.getVector(direction);
   var traversals = this.buildTraversals(vector);
   var moved      = false;
-
+  var mergeaudio = new Audio('files/spring.mp3');
+  
   // Save the current tile positions and remove merger information
   this.prepareTiles();
 
   var maxlevel = 2;
   // The maxlevel that a merge incur, 0 if a new level is reached
   // Traverse the grid in the right direction and move tiles
+  
   traversals.x.forEach(function (x) {
     traversals.y.forEach(function (y) {
       cell = { x: x, y: y };
@@ -149,8 +151,7 @@ GameManager.prototype.move = function (direction) {
             maxscore = merged.value;
             maxlevel = 0;
            }
-           
-	  var mergeaudio = new Audio('files/spring.mp3');
+	  
     	  mergeaudio.play();
           if (maxlevel > 0 && merged.value > maxlevel)
           	maxlevel = merged.value;
