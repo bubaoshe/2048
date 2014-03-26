@@ -169,13 +169,13 @@ GameManager.prototype.move = function (direction) {
   if (maxlevel > 2)
   {
   	document.getElementById("maxlevel").innerHTML = maxlevel;
-  	var mergeaudio = new Audio('files/spring.mp3');  	
+  	var mergeaudio = new Audio('files/spring.ogg');  	
   	mergeaudio.play();
   }
   else if (maxlevel === 0)
   {
 	document.getElementById("maxlevel").innerHTML = maxscore;
-  	var mergeaudio = new Audio('files/good.mp3');
+  	var mergeaudio = new Audio('files/good.ogg');
 	mergeaudio.play();  	
   }
   if (moved) {
